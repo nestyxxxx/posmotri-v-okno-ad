@@ -58,7 +58,7 @@ ul, ol {
   width: 711px; /* ширина видео совпадает с блоком */
   height: 386px; /* высота видео по макету */
   margin-bottom: 16px; /* совпадает с gap между видео и формой */
-  position: relative;
+  position: relative; /* Для позиционирования прелоадера */
 }
 
 .result__video {
@@ -89,12 +89,11 @@ ul, ol {
 .search-form__fieldset-title {
   font-family: 'Fira Sans Condensed', sans-serif;
   font-size: 18px;
-  font-weight: 400;
+  font-weight: 400; /* Толщина шрифта */
   line-height: 100%;
   color: #FFFFFF;
 }
-
-/* Текстовое поле */
+/* Текстовое поле input */
 .search-form__textfield {
   width: 225px;
   height: 27px;
@@ -107,14 +106,14 @@ ul, ol {
   font-family: 'Fira Sans Condensed', sans-serif;
   font-size: 18px;
   padding: 0 4px;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
+  -webkit-appearance: none; /* Убираем стандартное оформление для Safari*/
+  -moz-appearance: none; /* Для Firefox */
+  appearance: none; /* Для всех остальных браузеров */
 }
 
 /* Лейбл вокруг input */
 .search-form__label { 
-  cursor: pointer;
+  cursor: pointer; /* Курсор меняется на руку */
   display: flex; 
   align-items: center; 
   gap: 5px;
@@ -122,8 +121,8 @@ ul, ol {
 } 
 
 .search-form__textfield:focus-visible {
-  outline: 1px solid #FFFFFF;
-  outline-offset: 2px;
+  outline: 1px solid #FFFFFF; /* Обводка при фокусе */
+  outline-offset: 2px; /* Отступ обводки от края */
 }
 
 /* Показываем внутренний квадрат, когда чекбокс активен */
@@ -132,28 +131,28 @@ ul, ol {
 }
 
 .search-form__pseudo-checkbox:hover {
-  border-color: #545050;
+  border-color: #545050; /* Цвет границы при наведении */
 }
 
 .search-form__checkbox:focus-visible + .search-form__pseudo-checkbox {
-  outline: 1px solid #FFFFFF;
-  outline-offset: 2px;
+  outline: 1px solid #FFFFFF; /* Обводка */
+  outline-offset: 2px; /* Отступ */
 }
 
 /* Подчёркивание текста при наведении на label */
 .search-form__label:hover .search-form__label-text {
   text-decoration: underline;
-  cursor: pointer;
+  cursor: pointer; /* Курсор в виде руки */
 }
 
 .visually-hidden {
   position: absolute;
   inline-size: 1px;
   block-size: 1px;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-  clip-path: inset(50%);
-  white-space: nowrap;
+  overflow: hidden; /* Скрываем содержимое */
+  clip: rect(0 0 0 0); /* Для старых браузеров */
+  clip-path: inset(50%); /* Для новых браузеров */
+  white-space: nowrap; /* Запрещаем перенос */
 }
 
 .search-form__checkbox-list {
@@ -168,24 +167,25 @@ ul, ol {
   width: 18px;
   height: 18px;
   border: 1px solid #fff;
-  display: inline-block;
-  position: relative;
+  display: inline-block; /* Блочно-строчный элемент */
+  position: relative; /* Для ::after */
   cursor: pointer;
 }
 
 /* Внутренний квадрат ::after */
 .search-form__pseudo-checkbox::after {
-  content: "";
+  content: ""; /* Псевдоэлемент с контентом */
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 50%; /* Центр по вертикали */
+  left: 50%; /* Центр по горизонтали */
   width: 16px; /* на 1px меньше, чем псевдочекбокс */
   height: 16px;
   background-color: #FFFFFF;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); /* Центрируем */
   opacity: 0; /* по умолчанию скрыт */
 }
 
+/* Кнопка отправки формы */
 .search-form__submit-button {
   cursor: pointer;
   width: 194px;
@@ -203,9 +203,9 @@ ul, ol {
   display: flex;
   width: 399px;
   height: 534px;
-  flex-direction: column;
+  flex-direction: column; /* элементы внутри располагаются вертикально */
   gap: 26px;
-  align-self: end;
+  align-self: end; /* выравниваем сам блок по вертикали в конце сетки */
 }
 
 .title {
@@ -214,7 +214,7 @@ ul, ol {
   font-family: 'Oswald', sans-serif;
   font-weight: 700;
   font-size: 75px;
-  line-height: 94%;
+  line-height: 94%;  /* высота строки */
   text-transform: uppercase;
   letter-spacing: 0;
 }
@@ -241,7 +241,7 @@ ul, ol {
 }
 
 .content__card-link_current {
-  background-color: #545050;   /* фон активной карточки, можно менять под макет */
+  background-color: #545050;   /* фон активной карточки */
 }
 
 .content__list {
@@ -250,15 +250,15 @@ ul, ol {
   gap: 30px;
   margin: 0;
   padding: 0;
-  width: 100%; /* fill */
-  height: auto; /* hug */
+  width: 100%; 
+  height: auto;  /* высота подстраивается под содержимое */
 }
 
 /* карточки видео */
 .content__video-card {
   height: 103px;     /* фиксированная высота по макету */
-  width: 100%;       /* fill */
-  display: flex;          /* горизонтальная раскладка */
+  width: 100%;      
+  display: flex;          /* элементы внутри в строку */
   align-items: flex-start; /* прижать к верху */
   gap: 6px;              /* отступ между описанием и изображением */
   cursor: pointer;
@@ -273,11 +273,11 @@ ul, ol {
 }
 
 .content__video-card-description-container {
-  width: 196px;
+  width: 196px; /* ширина блока описания видео */
   font-family: 'Fira Sans Condensed', sans-serif;
   font-weight: 400;
   font-size: 18px;
-  line-height: 16.2px;       /* как в макете */
+  line-height: 16.2px;  
   color: #FFFFFF;
 }
 
@@ -286,7 +286,7 @@ ul, ol {
   font-family: 'Oswald', sans-serif;
   font-weight: 700;
   font-size: 30px;
-  line-height: 1;
+  line-height: 1; /* высота строки равна размеру шрифта */
   text-transform: uppercase;
   color: #FFFFFF;
   overflow: hidden;           /* скрываем лишнее */
@@ -323,7 +323,7 @@ ul, ol {
   overflow-y: auto;     /* вертикальный скролл */
   padding: 0;           /* убираем отступы */
   margin: 0;            /* убираем внешние отступы */
-  box-sizing: border-box;
+  box-sizing: border-box; /* учитываем границы при расчёте размеров */
   display: flex;
   flex-direction: column;
   position: relative;
@@ -336,25 +336,25 @@ ul, ol {
   width: 100%;          /* растягиваем на весь контейнер */
   height: 100%;         /* перекрываем блок */
   display: flex;        /* чтобы центрировать индикатор */
-  justify-content: center;
-  align-items: center;
-  background-color: rgba(27, 25, 25, 0.6); /* полупрозрачный фон (эффект затемнения) */
-  z-index: 10;          /* выше содержимого */
+  justify-content: center; /* центр по горизонтали */
+  align-items: center;  /* центр по вертикали */
+  background-color: rgba(27, 25, 25, 0.6); /* полупрозрачный фон */
+  z-index: 10;  /* поверх остальных элементов */
 }
 
 .more-button {
   cursor: pointer;
   width: 100%;           /* растягиваем по всей ширине родителя */
   height: 34px;
-  border: 1px solid #FFFFFF;
+  border: 1px solid #FFFFFF; /* рамка кнопки */
   background-color: transparent;
   color: #FFFFFF;
   font-family: 'Fira Sans Condensed', sans-serif;
   font-weight: 700;
   font-size: 18px;
   display: flex;         /* текст по центру */
-  justify-content: center;
-  align-items: center;
+  justify-content: center; /* горизонтальное центрирование текста */
+  align-items: center; /* вертикальное центрирование текста */
   box-sizing: border-box; /* чтобы border не вылезал за 100% */
 }
 
@@ -385,13 +385,13 @@ ul, ol {
 
 /* === Кастомный скроллбар === */
 .custom-scrollbar::-webkit-scrollbar {
-  width: 4px;
+  width: 4px; /* ширина полосы прокрутки */
 }
 
 .custom-scrollbar::-webkit-scrollbar-track {
-  background: rgb(217 217 217 / 10%);
+  background: rgb(217 217 217 / 10%); /* фон дорожки скролла */
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
-  background-color: #D9D9D9;
+  background-color: #D9D9D9;  /* цвет ползунка скролла */
 }
